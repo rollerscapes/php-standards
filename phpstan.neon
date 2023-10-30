@@ -1,0 +1,19 @@
+# Load all the common extensions, while not all are used by all projects
+# Its easier to ensure all are update-to-date.
+includes:
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-doctrine/extension.neon
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/jangregor/phpstan-prophecy/extension.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
+
+parameters:
+    # Project should use the higher possible number, but can lower when needed
+    level: 8
+
+    stubFiles:
+        - .phpstan-stubs/symfony/Constraint.stub
+        - .phpstan-stubs/symfony/Request.stub
+        - .phpstan-stubs/symfony/ArgumentValueResolverInterface.stub
+        - .phpstan-stubs/symfony/Form/FormBuilderInterface.stub
+        - .phpstan-stubs/symfony/Form/Form.stub

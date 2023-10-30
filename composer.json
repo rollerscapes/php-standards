@@ -1,0 +1,32 @@
+{
+    "name": "rollerscapes/standards",
+    "description": "Rollerscapes Code Standards and QA",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [],
+    "authors": [
+        {
+            "name": "Sebastiaan Stok",
+            "email": "s.stok@rollercapes.net"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "jangregor/phpstan-prophecy": "^1.0",
+        "phpstan/phpstan": "^1.8.2",
+        "phpstan/phpstan-doctrine": "^1.3",
+        "phpstan/phpstan-phpunit": "^1.1",
+        "phpstan/phpstan-symfony": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rollerscapes\\Standards\\": "src/"
+        },
+        "exclude-from-classmap": [
+            "tests/"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
