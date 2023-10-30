@@ -4,7 +4,6 @@ QA_DOCKER_COMMAND=docker run --init -t --rm --env "COMPOSER_HOME=/composer" --us
 install: composer-install
 ci: install check test
 check: composer-validate lint-xml cs-check phpstan
-test: phpunit
 
 clean:
 	rm -rf var/
@@ -36,10 +35,10 @@ cs: ensure
 cs-check: ensure
 	sh -c "${QA_DOCKER_COMMAND} php-cs-fixer fix -vvv --diff --dry-run"
 
-phpstan: ensure
+phpstan-default: ensure
 	vendor/bin/phpstan analyse
 
-phpunit: encore
+phpunit-default:
 	./vendor/bin/simple-phpunit
 
 fetch:
@@ -48,7 +47,9 @@ fetch:
 ensure:
 	mkdir -p ${HOME}/.composer /tmp/tmp-phpqa-$(shell id -u) var/
 
-.PHONY: clean composer-validate lint-xml lint-yaml lint-twig
-.PHONY: composer-install cs cs-check phpstan psalm phpunit infection
-.PHONY: db-fixtures in-docker-phpunit in-docker-infection fetch ensure
+.PHONY: clean composer-validate composer-install lint-xml
+.PHONY: cs cs-check phpstan fetch ensure
 
+# https://stackoverflow.com/a/49804748
+%: %-default
+	@ true
