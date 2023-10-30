@@ -31,7 +31,6 @@ return [
             'throw',
             'try',
             'while',
-            'yield',
             'yield_from',
         ],
     ],
@@ -41,12 +40,10 @@ return [
     //'header_comment' => ['header' => $header], // Needs configuring per project
     'mb_str_functions' => true,
     'not_operator_with_successor_space' => true,
-    'nullable_type_declaration' => ['syntax' => 'union'],
     'phpdoc_line_span' => ['const' => 'single'],
     'phpdoc_param_order' => true,
     'phpdoc_tag_casing' => true,
     'regular_callable_call' => true,
-    'simplified_null_return' => true,
     'ordered_class_elements' => false, // Use the depth-first ordering approach
     'ordered_imports' => [
         'imports_order' => ['const', 'class', 'function'],
