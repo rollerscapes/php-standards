@@ -39,6 +39,7 @@ phpstan-default: ensure
 	vendor/bin/phpstan analyse
 
 phpunit-default:
+	./vendor/bin/simple-phpunit install
 	./vendor/bin/simple-phpunit
 
 fetch:
