@@ -40,7 +40,7 @@ return [
     //'header_comment' => ['header' => $header], // Needs configuring per project
     'mb_str_functions' => true,
     'not_operator_with_successor_space' => true,
-    'phpdoc_line_span' => ['const' => 'single'],
+    'phpdoc_line_span' => ['property' => 'single', 'method' => 'single', 'const' => 'single'],
     'phpdoc_param_order' => true,
     'phpdoc_tag_casing' => true,
     'regular_callable_call' => true,
