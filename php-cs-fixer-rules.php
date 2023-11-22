@@ -48,6 +48,7 @@ return [
     'ordered_imports' => [
         'imports_order' => ['const', 'class', 'function'],
     ],
+    'php_unit_internal_class' => true, 
     'php_unit_method_casing' => ['case' => 'snake_case'], // it_[does]_[something]
     'php_unit_strict' => false, // Cannot do this globally
     //'php_unit_test_annotation' => ['style' => 'annotation'],
