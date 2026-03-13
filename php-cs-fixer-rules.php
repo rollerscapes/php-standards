@@ -2,12 +2,12 @@
 
 return [
     '@DoctrineAnnotation' => true,
-    '@PER-CS2.0' => true,
-    '@PER-CS2.0:risky' => true,
-    '@PHP82Migration' => true,
+    '@PER-CS2x0' => true,
+    '@PER-CS2x0:risky' => true,
+    '@PHP8x0Migration' => true,
     '@Symfony' => true,
     '@Symfony:risky' => true,
-    '@PHPUnit84Migration:risky' => true,
+    '@PHPUnit8x4Migration:risky' => true,
     'attribute_empty_parentheses' => true, // By PER2.0
     'blank_line_before_statement' => [
         'statements' => [
@@ -35,12 +35,25 @@ return [
         ],
     ],
     'blank_line_between_import_groups' => false, // Too much noise
+    'comment_to_phpdoc' => ['ignored_tags' => ['codeCoverageIgnoreStart', 'codeCoverageIgnoreEnd']],
     'concat_space' => ['spacing' => 'one'], // Clarity for concatenations
+    'class_attributes_separation' => [
+        'elements' => [ // Keep spaces to a minimum
+            'const' => 'none',
+            'method' => 'one',
+            'property' => 'none',
+            'trait_import' => 'none',
+            'case' => 'one'
+        ],
+    ],
     'general_phpdoc_annotation_remove' => ['annotations' => ['since', 'package', 'subpackage', 'date']], // Keep author for borrowed code
     //'header_comment' => ['header' => $header], // Needs configuring per project
     'mb_str_functions' => true,
+    'method_argument_space' => ['on_multiline' => 'ensure_fully_multiline', 'attribute_placement' => 'standalone', 'after_heredoc' => true],
+    'method_chaining_indentation' => false, // Too fragile for general usage
+    'multiline_promoted_properties' => true, // By PER2.0
     'not_operator_with_successor_space' => true,
-    'phpdoc_line_span' => ['property' => 'single', 'method' => 'single', 'const' => 'single'],
+    'phpdoc_line_span' => ['property' => 'single', 'const' => 'single'],
     'phpdoc_param_order' => true,
     'phpdoc_tag_casing' => true,
     'regular_callable_call' => true,
