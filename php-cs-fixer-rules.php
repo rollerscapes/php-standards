@@ -46,6 +46,7 @@ return [
             'case' => 'one'
         ],
     ],
+    'declare_strict_types' => true, // Re-add as Symfony removes this rule
     'general_phpdoc_annotation_remove' => ['annotations' => ['since', 'package', 'subpackage', 'date']], // Keep author for borrowed code
     //'header_comment' => ['header' => $header], // Needs configuring per project
     'mb_str_functions' => true,
